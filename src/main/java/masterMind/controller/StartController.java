@@ -11,6 +11,7 @@ public class StartController extends Controller {
 	
 	public void control() {
 		assert this.getState() == State.INITIAL;
+		this.getBoard().createSecret();
 		this.setState(State.IN_GAME);
 	}
 

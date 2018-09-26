@@ -12,7 +12,6 @@ public class Board {
 
 	public Board() {
 		this.tried = new ArrayList<>();
-		this.createSecret();
 	}
 	
 	public void createSecret() {
@@ -21,13 +20,13 @@ public class Board {
 
 	public void put(String value) {
 		assert value != null;
-		tried.add(new Combination(value));
+		this.tried.add(new Combination(value));
 	}
 
 	private int calculateDead() {
 		int countDead = 0;
 		for (int i = 0; i < Combination.DIMENSION; i++) {
-			if (this.secret.split()[i].equals(this.tried.get(tried.size() - 1).split()[i])) {
+			if (this.secret.split()[i].equals(this.tried.get(this.tried.size() - 1).split()[i])) {
 				countDead++;
 			}
 		}
@@ -38,7 +37,7 @@ public class Board {
 		long coutWounded = 0;
 		for (String letter : secret.noRepeatLetter()) {
 			long occurrencesSecret = secret.filterLetter(letter);
-			long occurrencesTried = this.tried.get(tried.size() - 1).filterLetter(letter);
+			long occurrencesTried = this.tried.get(this.tried.size() - 1).filterLetter(letter);
 			coutWounded += Math.min(occurrencesSecret, occurrencesTried);
 		}
 		return (int) coutWounded - this.calculateDead();
@@ -54,5 +53,9 @@ public class Board {
 
 	public void writeResult() {
 		new IO().writeln(this.calculateDead() + " Muertos " + this.calculateWounded() + " heridos");
+	}
+	
+	public void clear() {
+		this.tried.clear();
 	}
 }
