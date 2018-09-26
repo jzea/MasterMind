@@ -12,20 +12,23 @@ public abstract class Controller {
 		assert game != null;
 		this.game = game;
 	}
-	
+
 	public abstract void control();
-	
-	protected State getState(){
+
+	protected State getState() {
 		return game.getState();
 	}
-	
-	protected void setState(State state){
+
+	protected void setState(State state) {
 		assert state != null;
 		game.setState(state);
 	}
-	
+
 	protected Board getBoard() {
 		return game.getBoard();
 	}
-	
+
+	protected Game getGame() {
+		return game;
+	}
 }

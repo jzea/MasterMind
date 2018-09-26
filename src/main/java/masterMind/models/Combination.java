@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Random;
 
 import masterMind.utils.IO;
+import masterMind.utils.LimitedStringDialog;
 
 public class Combination {
 
@@ -12,13 +13,6 @@ public class Combination {
 
 	public static final int DIMENSION = 4;
 
-	public Combination(String value) {
-		assert value != null;
-		this.value = value;
-	}
-	public Combination() {
-		this.generateRandom();
-	}
 	public String[] split() {
 		String[] items = this.value.split("");
 		return items;
@@ -35,7 +29,13 @@ public class Combination {
 		return this.value.chars().filter(val -> val == letter.charAt(0)).count();
 	}
 
-	private void generateRandom() {
+	public void read(String title) {
+		assert title != null;
+		IO io = new IO();
+		this.value = new LimitedStringDialog(title,Combination.DIMENSION).read();
+	}
+
+	public void generateRandom() {
 		Color[] color = Color.values();
 		Random generator = new Random();
 		String random = "";
@@ -43,6 +43,9 @@ public class Combination {
 			random += color[generator.nextInt(color.length)];
 		}
 		this.value = random;
-		new IO().writeln("Secret : " + random);
+	}
+
+	public String getValue() {
+		return this.value;
 	}
 }

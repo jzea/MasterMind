@@ -13,14 +13,16 @@ public class Board {
 	public Board() {
 		this.tried = new ArrayList<>();
 	}
-	
+
 	public void createSecret() {
 		this.secret = new Combination();
+		this.secret.generateRandom();
+		new IO().writeln("Secret : " + this.secret.getValue());
 	}
 
-	public void put(String value) {
-		assert value != null;
-		this.tried.add(new Combination(value));
+	public void put(Combination combination) {
+		assert combination != null;
+		this.tried.add(combination);
 	}
 
 	private int calculateDead() {
@@ -50,12 +52,15 @@ public class Board {
 		return false;
 	}
 
-
 	public void writeResult() {
 		new IO().writeln(this.calculateDead() + " Muertos " + this.calculateWounded() + " heridos");
 	}
-	
+
 	public void clear() {
 		this.tried.clear();
+	}
+
+	public int countTried() {
+		return tried.size();
 	}
 }

@@ -1,6 +1,5 @@
 package masterMind.controller;
 
-
 import masterMind.utils.IO;
 import masterMind.models.Game;
 import masterMind.models.State;
@@ -17,8 +16,7 @@ public class ContinueController extends Controller {
 		char answer;
 		do {
 			answer = new IO().readChar("Desea continuar? (s/n): ");
-		} while (answer != 's' && answer != 'S' && answer != 'n'
-				&& answer != 'N');
+		} while (answer != 's' && answer != 'S' && answer != 'n' && answer != 'N');
 		if (answer == 's' || answer == 'S') {
 			this.getBoard().clear();
 			this.setState(State.INITIAL);

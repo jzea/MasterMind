@@ -14,7 +14,6 @@ public class Logic {
 	public Logic() {
 		game = new Game();
 		startController = new StartController(game);
-		putController = new PutController(game);
 		continueController= new ContinueController(game);
 	}
 
@@ -23,7 +22,7 @@ public class Logic {
 		case INITIAL:
 			return startController;
 		case IN_GAME:
-			return putController;
+			return startController.getPutController();
 		case FINAL:
 			return continueController;
 		default:
