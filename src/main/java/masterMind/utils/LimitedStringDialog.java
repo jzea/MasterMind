@@ -1,4 +1,4 @@
-package masterMind;
+package masterMind.utils;
 
 public class LimitedStringDialog {
 

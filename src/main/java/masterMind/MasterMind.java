@@ -1,21 +1,22 @@
 package masterMind;
 
+
 public class MasterMind {
 
-	private Player player;
-	private Board board;
+	private Logic logic;
 
 	public MasterMind() {
-		board = new Board();
-		player = new Player(board);
+		logic = new Logic();
 	}
 
 	public void play() {
+		Controller controller;
 		do {
-			player.put();
-			board.writeResult();
-		} while (!board.completeDead());
-		player.win();
+			controller = logic.getController();
+			if (controller != null){
+				controller.control();
+			}
+		} while (controller != null);
 	}
 
 	public static void main(String[] args) {
