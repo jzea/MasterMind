@@ -1,4 +1,6 @@
-package masterMind;
+package masterMind.controller;
+
+import masterMind.models.Game;
 
 public class Logic {
 

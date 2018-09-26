@@ -1,4 +1,7 @@
-package masterMind;
+package masterMind.controller;
+
+import masterMind.models.Game;
+import masterMind.models.State;
 
 public class StartController extends Controller {
 

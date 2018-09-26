@@ -1,4 +1,4 @@
-package masterMind;
+package masterMind.models;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -16,7 +16,9 @@ public class Combination {
 		assert value != null;
 		this.value = value;
 	}
-
+	public Combination() {
+		this.generateRandom();
+	}
 	public String[] split() {
 		String[] items = this.value.split("");
 		return items;
@@ -33,7 +35,7 @@ public class Combination {
 		return this.value.chars().filter(val -> val == letter.charAt(0)).count();
 	}
 
-	public void generateRandom() {
+	private void generateRandom() {
 		Color[] color = Color.values();
 		Random generator = new Random();
 		String random = "";

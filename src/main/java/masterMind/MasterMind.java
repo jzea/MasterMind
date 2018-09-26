@@ -1,5 +1,7 @@
 package masterMind;
 
+import masterMind.controller.Controller;
+import masterMind.controller.Logic;
 
 public class MasterMind {
 

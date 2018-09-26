@@ -1,4 +1,8 @@
-package masterMind;
+package masterMind.controller;
+
+import masterMind.models.Board;
+import masterMind.models.Game;
+import masterMind.models.State;
 
 public abstract class Controller {
 

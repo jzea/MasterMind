@@ -1,5 +1,8 @@
-package masterMind;
+package masterMind.controller;
 
+import masterMind.models.Combination;
+import masterMind.models.Game;
+import masterMind.models.State;
 import masterMind.utils.IO;
 import masterMind.utils.LimitedStringDialog;
 

@@ -1,4 +1,4 @@
-package masterMind;
+package masterMind.models;
 
 public enum Color {
 	AMARILLO('A'), 

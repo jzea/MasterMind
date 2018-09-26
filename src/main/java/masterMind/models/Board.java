@@ -1,4 +1,4 @@
-package masterMind;
+package masterMind.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +16,7 @@ public class Board {
 	}
 	
 	public void createSecret() {
-		this.secret = new Combination("a"); // CODIGO DE M..
-		this.secret.generateRandom();
+		this.secret = new Combination();
 	}
 
 	public void put(String value) {
