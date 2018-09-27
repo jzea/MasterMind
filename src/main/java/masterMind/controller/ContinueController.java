@@ -18,7 +18,7 @@ public class ContinueController extends Controller {
 			answer = new IO().readChar("Desea continuar? (s/n): ");
 		} while (answer != 's' && answer != 'S' && answer != 'n' && answer != 'N');
 		if (answer == 's' || answer == 'S') {
-			this.getBoard().clear();
+			this.clear();
 			this.setState(State.INITIAL);
 		} else {
 			this.setState(State.EXIT);

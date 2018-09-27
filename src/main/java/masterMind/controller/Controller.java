@@ -1,6 +1,7 @@
 package masterMind.controller;
 
 import masterMind.models.Board;
+import masterMind.models.Combination;
 import masterMind.models.Game;
 import masterMind.models.State;
 
@@ -24,11 +25,31 @@ public abstract class Controller {
 		game.setState(state);
 	}
 
-	protected Board getBoard() {
-		return game.getBoard();
-	}
-
 	protected Game getGame() {
 		return game;
+	}
+
+	protected boolean completeDead() {
+		return game.completeDead();
+	}
+
+	protected void put(Combination combination) {
+		game.put(combination);
+	}
+
+	protected void showDeadWounded() {
+		game.showDeadWounded();
+	}
+
+	protected int countTrieds() {
+		return game.countTrieds();
+	}
+
+	protected void createSecret() {
+		game.createSecret();
+	}
+
+	protected void clear() {
+		game.clear();
 	}
 }

@@ -19,8 +19,27 @@ public class Game {
 		this.state = state;
 	}
 
-	public Board getBoard() {
-		return board;
+	public boolean completeDead() {
+		return board.completeDead();
 	}
 
+	public void put(Combination combination) {
+		board.put(combination);
+	}
+
+	public void showDeadWounded() {
+		board.showDeadWounded();
+	}
+
+	public int countTrieds() {
+		return board.countTrieds();
+	}
+
+	public void createSecret() {
+		board.createSecret();
+	}
+
+	public void clear() {
+		board.clear();
+	}
 }

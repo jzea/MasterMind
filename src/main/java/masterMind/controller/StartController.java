@@ -14,13 +14,13 @@ public class StartController extends Controller {
 
 	public void control() {
 		assert this.getState() == State.INITIAL;
-		int mode = new LimitedIntDialog("Selecciona la partida? 1. Partida, 2. Demo", 1, 2).read();
+		int mode = new LimitedIntDialog("Selecciona la partida? \n 1. Partida \n 2. Demo \n", 1, 2).read();
 		if (mode == 1) {
 			putController = new ManualPutController(this.getGame());
 		} else {
 			putController = new RandomPutController(this.getGame());
 		}
-		this.getBoard().createSecret();
+		this.createSecret();
 		this.setState(State.IN_GAME);
 	}
 

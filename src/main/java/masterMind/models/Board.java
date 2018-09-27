@@ -52,15 +52,15 @@ public class Board {
 		return false;
 	}
 
-	public void writeResult() {
-		new IO().writeln(this.calculateDead() + " Muertos " + this.calculateWounded() + " heridos");
+	public void showDeadWounded() {
+		new IO().writeln(this.calculateDead() + " muertos " + this.calculateWounded() + " heridos \n");
 	}
 
 	public void clear() {
 		this.tried.clear();
 	}
 
-	public int countTried() {
+	public int countTrieds() {
 		return tried.size();
 	}
 }

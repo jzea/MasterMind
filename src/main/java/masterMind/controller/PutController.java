@@ -17,17 +17,16 @@ public abstract class PutController extends Controller {
 
 	public void control() {
 		assert this.getState() == State.IN_GAME;
-		String title = "Intento: [cuatro letras de entre A-amarillo, R-rojo, V-verde, Z-azul,\r\n"
-				+ "B-blanco, N-negro] ";
-		tried = this.selectTarget(title);
+		tried = this.selectTarget("Intento: [cuatro letras de entre A-amarillo, R-rojo, V-verde, Z-azul,\r\n"
+				+ "B-blanco, N-negro] ");
 
-		this.getBoard().put(tried);
-		if (this.getBoard().completeDead()) {
+		this.put(tried);
+		if (this.completeDead()) {
 			this.setState(State.FINAL);
 			this.win();
 		} else {
-			this.getBoard().writeResult();
-			if (this.getBoard().countTried() == PutController.MAXTRIEDS) {
+			this.showDeadWounded();
+			if (this.countTrieds() == PutController.MAXTRIEDS) {
 				this.setState(State.FINAL);
 			}
 		}

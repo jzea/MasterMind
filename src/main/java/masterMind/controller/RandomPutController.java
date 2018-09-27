@@ -15,8 +15,7 @@ public class RandomPutController extends PutController {
 
 		Combination tried = new Combination();
 		tried.generateRandom();
-		new IO().writeln(this.getBoard().countTried()+1 + title +" "+ tried.getValue());
-		//new IO().readString("Enter para continuar!");
+		new IO().writeln("#"+(this.countTrieds() + 1 ) + " " + title + " " + tried.getValue());
 		return tried;
 	}
 
