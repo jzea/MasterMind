@@ -2,9 +2,6 @@ package masterMind.models;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-
-import masterMind.utils.IO;
 
 public class Board {
 	private Combination secret;
@@ -17,7 +14,6 @@ public class Board {
 	public void createSecret() {
 		this.secret = new Combination();
 		this.secret.generateRandom();
-		new IO().writeln("Secret : " + this.secret.getValue());
 	}
 
 	public void put(Combination combination) {
@@ -25,7 +21,7 @@ public class Board {
 		this.tried.add(combination);
 	}
 
-	private int calculateDead() {
+	public int calculateDead() {
 		int countDead = 0;
 		for (int i = 0; i < Combination.DIMENSION; i++) {
 			if (this.secret.split()[i].equals(this.tried.get(this.tried.size() - 1).split()[i])) {
@@ -35,7 +31,7 @@ public class Board {
 		return countDead;
 	}
 
-	private int calculateWounded() {
+	public int calculateWounded() {
 		long coutWounded = 0;
 		for (String letter : secret.noRepeatLetter()) {
 			long occurrencesSecret = secret.filterLetter(letter);
@@ -52,9 +48,6 @@ public class Board {
 		return false;
 	}
 
-	public void showDeadWounded() {
-		new IO().writeln(this.calculateDead() + " muertos " + this.calculateWounded() + " heridos \n");
-	}
 
 	public void clear() {
 		this.tried.clear();
@@ -62,5 +55,8 @@ public class Board {
 
 	public int countTrieds() {
 		return tried.size();
+	}
+	public Combination getSecret() {
+		return secret;
 	}
 }

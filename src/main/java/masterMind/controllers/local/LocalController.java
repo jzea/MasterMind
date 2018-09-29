@@ -1,20 +1,19 @@
-package masterMind.controller;
+package masterMind.controllers.local;
 
 import masterMind.models.Board;
 import masterMind.models.Combination;
 import masterMind.models.Game;
 import masterMind.models.State;
 
-public abstract class Controller {
+public abstract class LocalController {
 
 	private Game game;
 
-	protected Controller(Game game) {
+	protected LocalController(Game game) {
 		assert game != null;
 		this.game = game;
 	}
 
-	public abstract void control();
 
 	protected State getState() {
 		return game.getState();
@@ -29,16 +28,12 @@ public abstract class Controller {
 		return game;
 	}
 
-	protected boolean completeDead() {
+	public boolean completeDead() {
 		return game.completeDead();
 	}
 
 	protected void put(Combination combination) {
 		game.put(combination);
-	}
-
-	protected void showDeadWounded() {
-		game.showDeadWounded();
 	}
 
 	protected int countTrieds() {
@@ -51,5 +46,14 @@ public abstract class Controller {
 
 	protected void clear() {
 		game.clear();
+	}
+	public Combination getSecret() {
+		return game.getSecret();
+	}
+	public int calculateDead() {
+		return game.calculateDead();
+	}
+	public int calculateWounded() {
+		return game.calculateWounded();
 	}
 }

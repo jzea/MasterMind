@@ -3,8 +3,6 @@ package masterMind.models;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
-
-import masterMind.utils.IO;
 import masterMind.utils.LimitedStringDialog;
 
 public class Combination {
@@ -29,12 +27,6 @@ public class Combination {
 		return this.value.chars().filter(val -> val == letter.charAt(0)).count();
 	}
 
-	public void read(String title) {
-		assert title != null;
-		IO io = new IO();
-		this.value = new LimitedStringDialog(title,Combination.DIMENSION).read();
-	}
-
 	public void generateRandom() {
 		Color[] color = Color.values();
 		Random generator = new Random();
@@ -47,5 +39,8 @@ public class Combination {
 
 	public String getValue() {
 		return this.value;
+	}
+	public void setValue(String value) {
+		this.value = value ;
 	}
 }

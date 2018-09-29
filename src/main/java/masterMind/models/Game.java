@@ -27,10 +27,6 @@ public class Game {
 		board.put(combination);
 	}
 
-	public void showDeadWounded() {
-		board.showDeadWounded();
-	}
-
 	public int countTrieds() {
 		return board.countTrieds();
 	}
@@ -41,5 +37,14 @@ public class Game {
 
 	public void clear() {
 		board.clear();
+	}
+	public Combination getSecret() {
+		return board.getSecret();
+	}
+	public int calculateDead() {
+		return board.calculateDead();
+	}
+	public int calculateWounded() {
+		return board.calculateWounded();
 	}
 }

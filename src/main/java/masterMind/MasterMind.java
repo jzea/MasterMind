@@ -1,22 +1,26 @@
 package masterMind;
 
-import masterMind.controller.Controller;
-import masterMind.controller.Logic;
+import masterMind.controllers.local.Logic;
+import masterMind.controllers.local.LocalOperationController;
+import masterMind.views.MasterMindView;
 
 public class MasterMind {
 
 	private Logic logic;
+	private MasterMindView view;
 
 	public MasterMind() {
 		logic = new Logic();
+		view = new MasterMindView();
 	}
 
 	public void play() {
-		Controller controller;
+		LocalOperationController controller;
 		do {
 			controller = logic.getController();
+			
 			if (controller != null){
-				controller.control();
+				view.interact(controller);
 			}
 		} while (controller != null);
 	}
