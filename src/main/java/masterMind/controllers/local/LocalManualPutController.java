@@ -2,9 +2,10 @@ package masterMind.controllers.local;
 
 import masterMind.models.Game;
 import masterMind.controllers.ManualPutController;
+import masterMind.controllers.PutControllerVisitor;
 import masterMind.models.Combination;
 
-public class LocalManualPutController extends LocalPutController implements ManualPutController{
+public class LocalManualPutController extends LocalPutController implements ManualPutController {
 
 	public LocalManualPutController(Game game) {
 		super(game);
@@ -16,5 +17,8 @@ public class LocalManualPutController extends LocalPutController implements Manu
 		return tried;
 	}
 
-
+	@Override
+	public void accept(PutControllerVisitor putControllerVisitor) {
+		putControllerVisitor.visit(this);
+	}
 }

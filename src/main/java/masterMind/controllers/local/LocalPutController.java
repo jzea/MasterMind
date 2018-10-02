@@ -6,9 +6,8 @@ import masterMind.models.Combination;
 import masterMind.models.Game;
 import masterMind.models.State;
 
-public abstract class LocalPutController extends LocalOperationController implements PutController{
+public abstract class LocalPutController extends LocalOperationController implements PutController {
 	public static final int MAXTRIEDS = 10;
-	private Combination tried;
 
 	public LocalPutController(Game game) {
 		super(game);
@@ -28,7 +27,7 @@ public abstract class LocalPutController extends LocalOperationController implem
 	}
 
 	public abstract Combination selectTarget();
-	
+
 	@Override
 	public void accept(OperationControllerVisitor operationControllerVisitor) {
 		assert operationControllerVisitor != null;

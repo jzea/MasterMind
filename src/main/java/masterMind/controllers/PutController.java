@@ -5,6 +5,10 @@ import masterMind.models.Combination;
 public interface PutController extends OperationController {
 
 	void control(Combination combination);
+
 	boolean completeDead();
+
 	Combination selectTarget();
+
+	void accept(PutControllerVisitor putControllerVisitor);
 }

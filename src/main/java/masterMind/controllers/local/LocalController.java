@@ -1,6 +1,5 @@
 package masterMind.controllers.local;
 
-import masterMind.models.Board;
 import masterMind.models.Combination;
 import masterMind.models.Game;
 import masterMind.models.State;
@@ -13,7 +12,6 @@ public abstract class LocalController {
 		assert game != null;
 		this.game = game;
 	}
-
 
 	protected State getState() {
 		return game.getState();
@@ -47,12 +45,15 @@ public abstract class LocalController {
 	protected void clear() {
 		game.clear();
 	}
+
 	public Combination getSecret() {
 		return game.getSecret();
 	}
+
 	public int calculateDead() {
 		return game.calculateDead();
 	}
+
 	public int calculateWounded() {
 		return game.calculateWounded();
 	}

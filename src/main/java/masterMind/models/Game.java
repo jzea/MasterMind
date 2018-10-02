@@ -38,12 +38,15 @@ public class Game {
 	public void clear() {
 		board.clear();
 	}
+
 	public Combination getSecret() {
 		return board.getSecret();
 	}
+
 	public int calculateDead() {
 		return board.calculateDead();
 	}
+
 	public int calculateWounded() {
 		return board.calculateWounded();
 	}

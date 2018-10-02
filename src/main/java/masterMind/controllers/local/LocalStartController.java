@@ -5,7 +5,6 @@ import masterMind.controllers.StartController;
 import masterMind.models.Game;
 import masterMind.models.State;
 
-
 public class LocalStartController extends LocalOperationController implements StartController {
 
 	private LocalPutController putController;

@@ -7,10 +7,9 @@ import masterMind.controllers.StartController;
 public interface OperationControllerVisitor {
 
 	void visit(StartController startController);
-	
+
 	void visit(PutController putController);
-	
+
 	void visit(ContinueController continueController);
 
 }
-

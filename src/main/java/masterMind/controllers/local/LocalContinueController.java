@@ -23,6 +23,6 @@ public class LocalContinueController extends LocalOperationController implements
 
 	@Override
 	public void accept(OperationControllerVisitor operationControllerVisitor) {
-		operationControllerVisitor.visit(this);		
+		operationControllerVisitor.visit(this);
 	}
 }

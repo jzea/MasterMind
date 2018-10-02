@@ -48,7 +48,6 @@ public class Board {
 		return false;
 	}
 
-
 	public void clear() {
 		this.tried.clear();
 	}
@@ -56,6 +55,7 @@ public class Board {
 	public int countTrieds() {
 		return tried.size();
 	}
+
 	public Combination getSecret() {
 		return secret;
 	}

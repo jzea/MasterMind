@@ -3,7 +3,6 @@ package masterMind.models;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
-import masterMind.utils.LimitedStringDialog;
 
 public class Combination {
 
@@ -40,7 +39,8 @@ public class Combination {
 	public String getValue() {
 		return this.value;
 	}
+
 	public void setValue(String value) {
-		this.value = value ;
+		this.value = value;
 	}
 }

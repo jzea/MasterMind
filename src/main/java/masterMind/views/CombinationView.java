@@ -2,26 +2,24 @@ package masterMind.views;
 
 import masterMind.models.Combination;
 import masterMind.utils.IO;
-import masterMind.utils.LimitedStringDialog;
+import masterMind.utils.ValidCombination;
 
 class CombinationView {
 
 	private Combination combination;
-
-	private IO io;
+	private String title;
 
 	CombinationView(Combination combination) {
 		assert combination != null;
 		this.combination = combination;
-		io = new IO();
+		this.title = "Intento: [cuatro letras de entre A-amarillo, R-rojo, V-verde, Z-azul, B-blanco, N-negro]";
 	}
 
-	void read(String title) {
-		assert title != null;
-		combination.setValue(new LimitedStringDialog(title, Combination.DIMENSION).read());
+	void readManual() {
+		combination.setValue(new ValidCombination(title, Combination.DIMENSION).read());
 	}
 
-	void write(String title) {
+	void writeRandom() {
 		new IO().writeln(title + " " + combination.getValue());
 	}
 

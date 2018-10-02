@@ -5,16 +5,13 @@ import masterMind.models.Game;
 public class Logic {
 
 	private Game game;
-
 	private LocalStartController startController;
-
-	private LocalPutController putController;
 	private LocalContinueController continueController;
 
 	public Logic() {
 		game = new Game();
 		startController = new LocalStartController(game);
-		continueController= new LocalContinueController(game);
+		continueController = new LocalContinueController(game);
 	}
 
 	public LocalOperationController getController() {
